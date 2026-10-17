@@ -260,6 +260,14 @@ progress::-webkit-progress-value,             /* Progress bar fill for WebKit br
     display: none !important;
 }
 
+/* Also hide the whole control on legacy and Modern cards, including its hit area. */
+.cardOverlayButton:has(
+    > .cardOverlayButtonIcon:is(.playstatebutton-icon-unplayed, .playstatebutton-icon-played, .favorite),
+    > .MuiSvgIcon-root:is([data-testid="CheckIcon"], [data-testid="FavoriteIcon"])
+) {
+    display: none !important;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~ SPECIFIC ELEMENT BACKGROUNDS (NON-ACCENT) ~~~~~~~~~~~~~~~~~~~~ */
 /* Defines specific background colors for particular buttons or elements, not tied to the theme accent. */
 
